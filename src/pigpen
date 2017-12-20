@@ -1,0 +1,15 @@
+;; core library
+[com.netflix.pigpen/pigpen "0.3.3"]
+
+;; pig support
+[com.netflix.pigpen/pigpen-pig "0.3.3"]
+
+;; cascading support
+[com.netflix.pigpen/pigpen-cascading "0.3.3"]
+
+;; rx support
+[com.netflix.pigpen/pigpen-rx "0.3.3"]
+
+Para utilizer el parquet loader se debe añadir la dependencia:
+
+[com.netflix.pigpen/pigpen-parquet-pig "0.3.3"]

@@ -1,0 +1,9 @@
+;; Porción de código en Clojure
+
+(ns com.netflix.mine)
+(defn func-to-call [x] (* 2 x))
+// Invocado desde Java
+final Var require = RT.var("clojure.core", "require");
+require.invoke(Symbol.intern("com.netflix.mine"));
+final Var funcToCall = RT.var("com.netflix.mine", "func-to-call");
+assertEquals(198L, funcToCall.invoke(99L));

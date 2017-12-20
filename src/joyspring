@@ -1,0 +1,10 @@
+(def s (subscriber/subscriber+ 12345))
+;=> { ... user data from subscriber service ...}
+; Check if they're in A/B test 4567
+(ab/allocation+ s 4567)
+;=> nil
+; Forcibly allocate them to test 4567 cell 2
+(ab/allocate+ s 4567 2)
+; Get social info
+(social/profile+ s :netflix)
+;=> { ... social connection status ...}

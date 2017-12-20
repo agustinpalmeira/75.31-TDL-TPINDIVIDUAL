@@ -1,0 +1,10 @@
+(require '[pigpen.core :as pig])
+
+(defn word-count [lines]
+  (->> lines
+       (pig/mapcat #(-> % first
+                        (clojure.string/lower-case)
+                        (clojure.string/replace #"[^\w\s]" "")
+                        (clojure.string/split #"\s+")))
+       (pig/group-by identity)
+       (pig/map (fn [[word occurrences]] [word (count occurrences)]))))
